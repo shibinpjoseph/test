@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+
+		<div ng-controller="myList">
+			{{name}}
+			<form name="myForm">
+			<ul>
+				<li ng-repeat="item in list">{{item}} <span ng-click="removeItem($index)">X</span></li>
+				<input type="text" name="newItem" ng-model="newItem" required>
+				<div ng-click="addItem()">ADD</div>
+				<p ng-show="myForm.newItem.$dirty || errormessage">{{errormessage}}</p>
+			</ul>
+			</form>
+		</div>
+		<script src="myApp.js"></script>
+		<script src="controler.js"></script>
+	</body>
+</html>

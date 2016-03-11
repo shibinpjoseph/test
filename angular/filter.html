@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+
+		<div ng-controller="myFilter">
+			{{myArray[1] | uppercase}},</br>
+			{{myArray[0] | lowercase}}
+			<ul>
+				<li ng-repeat="name in names | orderBy : 'name'">{{name.name}} - {{name.country}}</li>
+
+				<p>filter on click</p>
+				<div ng-click="orderByMe('name')"><b>name</b></div>
+				<div ng-click="orderByMe('country')"><b>country</b></div>
+				<li ng-repeat="name in names | orderBy : myOrder">{{name.name}} - {{name.country}}</li>
+				<p>custom filter</p>
+				<li ng-repeat="name in naneFilter">{{name | myFormat}}</li>
+			</ul>
+			<p>price : {{price | currency}}</p>
+
+			<p>filter from input</p>
+			<input type="text" ng-model="filterTest">
+			<ul>
+				<li ng-repeat="name in naneFilter | filter : filterTest">{{name}}</li>
+			</ul>
+		</div>
+		<script src="myApp.js"></script>
+		<script src="controler.js"></script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+	</head>
+	<style type="text/css">
+	div {
+	  transition: all linear 0.5s;
+	  background-color: lightblue;
+	  height: 100px;
+	  width: 100%;
+	  position: relative;
+	  top: 0;
+	  left: 0;
+	}
+	.ng-hide {
+	  height: 0;
+	  width: 0;
+	  background-color: transparent;
+	  top:-200px;
+	  left: 200px;
+	}
+
+	</style>
+	<body ng-app="myApp">
+		<div ng-controller="myForm">
+			{{myForm}}
+			<form>
+				<input type="radio" name="dog" value="dog" ng-model="animal">
+				<input type="radio" name="cat" value="cat" ng-model="animal">
+				<input type="radio" name="got" value="got" ng-model="animal">
+				<select ng-model="animal">
+					<option value="dog">dog</option>
+					<option value="cat">cat</option>
+					<option value="got">got</option>
+				</select>
+			</form>
+			<div ng-switch="animal">
+				<div ng-switch-when="dog">
+					<h1>Dog</h1>
+					<p>Test dog</p>
+				</div>
+				<div ng-switch-when="cat">
+					<h1>cat</h1>
+					<p>Test cat</p>
+				</div>
+				<div ng-switch-when="got">
+					<h1>got</h1>
+					<p>Test got</p>
+				</div>
+			</div>
+			<form>
+				First name : <input type="text" ng-model="user.firstName">
+				Lasr name : <input type="text" ng-model="user.lastName">
+				<button ng-click="myClick()">Reset</button>
+				<button ng-click="myClear()">Clear</button>
+			</form>
+			<br>
+			user : {{user}}
+			<br>
+			master : {{master}}
+		</div>
+		<script src="myApp.js"></script>
+		<script src="controler.js"></script>
+	</body>
+</html>

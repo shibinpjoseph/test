@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-init="firstname = 'green'" ng-controller="myCTRL">
+			<input type="text" value="" ng-model="name" style="background-color:{{firstname}};">
+			<div>{{name}}</div>
+			<div ng-bind="name"></div>
+			<div ng-bind="firstname"></div>
+			<div>{{lastname + " "+ midlename}}</div>
+			<div>{{midlename}}</div>
+			<div ng-bind="quentity * count"></div>
+			<div>{{person.name}} of the {{value[2]}}</div>
+		</div>
+		<script type="text/javascript">
+			var app = angular.module('myApp',[]);
+			app.controller('myCTRL', function ($scope) {
+
+				$scope.lastname = 'joseph';
+				$scope.midlename = 'poovanal';
+				$scope.quentity = 5;
+				$scope.count = 10;
+				$scope.person = {
+					name: "emily",
+					lastname: "anna"
+				};
+				$scope.value = [10, 20, 50, 50];
+			})
+		</script>
+	</body>
+</html>

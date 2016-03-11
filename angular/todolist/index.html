@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+
+		<div ng-controller="myList">
+			{{name}}
+			<form name="myForm" ng-submit="addList()">
+			<ul>
+				<li><input type="text" ng-model="todolist"> <input type="submit" value="Add"><li>
+			</ul>
+			</form>
+			<div ng-repeat="item in checkList">
+				<input type="checkbox" ng-model="item.value"><span>{{item.checklistTxt}}</span>
+			</div>
+			<button ng-click="remove()">Remove</button>
+		</div>
+		<script src="myApp.js"></script>
+		<script src="controler.js"></script>
+	</body>
+</html>

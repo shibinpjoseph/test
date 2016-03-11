@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<style type="text/css">
+			input.ng-invalid{
+				border: solid 1px red;
+			}
+			/* all default class can be used for styling.
+			ng-empty
+			ng-not-empty
+			ng-touched
+			ng-untouched
+			ng-valid
+			ng-invalid
+			ng-dirty
+			ng-pending
+			ng-pristine*/
+		</style>
+	</head>
+	<body ng-app="myApp" ng-init="myTest = 'post@test.com'">
+		<form name="myForm">
+			email : <input type="email" name="myAddress" ng-model="text" required>
+			<span ng-show="myForm.myAddress.$error.email">not a valid ID.</span>
+		<div>
+			email : <input type="email" name="myAddress2" ng-model="myTest">
+			<p>status</p>
+			{{myForm.myAddress2.$valid}}
+			{{myForm.myAddress2.$dirty}}
+			{{myForm.myAddress2.$touched}}
+		</div>
+		</form>
+		<script type="text/javascript">
+			var app = angular.module('myApp',[]);
+		</script>
+	</body>
+</html>

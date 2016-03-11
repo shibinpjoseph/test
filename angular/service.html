@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+
+		<div ng-controller="myService" ng-init="buttonEnabled = false" ng-mouseover="mouseOver($event)">
+			{{test}}, {{myURL}}, {{testTimeOut}} , {{myTime}}
+			<div>
+				<button ng-disabled="buttonEnabled" ng-click="toggle()">CLick Me</button>
+				<input type="checkbox" ng-model="buttonEnabled">
+				<p ng-hide="buttonEnabled">{{buttonEnabled}}</p>
+				<p ng-show="buttonEnabled">{{buttonEnabled}}</p>
+			</div>
+			<div ng-show="myToggle">
+				<p ng-click="myClick('+')">increase count</p>
+				<p ng-click="myClick('-')">Decrease count</p>
+				<h1>{{count}}</h1>
+			</div>
+			<p>{{x}}, {{y}}</p>
+		</div>
+		<script src="myApp.js"></script>
+		<script src="controler.js"></script>
+	</body>
+</html>

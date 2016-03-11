@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div>
+			<p>checking root scope and scope</p>
+			<p>{{testScope}}</p>
+		</div>
+		<div ng-controller="myCtrl">
+			<input ng-model="firstName">
+			<p>{{firstName}}</p>
+			<p>{{lastName}}</p>
+			<p>{{fullName()}}<p>
+			<ul>
+				<li ng-repeat="x in myArray">{{x}}</li>
+			</ul>
+			<div>
+				<p>checking root scope and scope</p>
+				<p>{{testScope}}</p>
+			</div>
+		</div>
+		<script src="myApp.js"></script>
+		<script src="myCtrl.js"></script>
+	</body>
+</html>

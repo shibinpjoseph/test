@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+
+		<div ng-controller="myJson">
+			{{statuscode}}, {{statustext}}
+			<ul>
+				<li ng-repeat="list in myList">{{list.name}}</li>
+			</ul>
+
+		</div>
+		<script src="myApp.js"></script>
+		<script src="controler.js"></script>
+	</body>
+</html>
