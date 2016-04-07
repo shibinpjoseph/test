@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+
+		<ul class="nav">
+            <li><a href="#AddNewOrder"> Add New Order </a></li>
+            <li><a href="#ShowOrders"> Show Order </a></li>
+            <li><a href="#ShowOrders/123"> Show Order </a></li>
+        </ul>
+        <div ng-view></div>
+
+        <script type="text/ng-template" id="test_order.html">
+        <p>test<p>
+        {{message}}
+        </script>
+
+		<script src="myApp.js"></script>
+		<script src="controler.js"></script>
+	</body>
+</html>
